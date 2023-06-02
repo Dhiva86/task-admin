@@ -1,24 +1,36 @@
-import logo from './logo.svg';
+/* eslint-disable react/style-prop-object */
+import {  Route, Routes } from 'react-router-dom';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import Dashboard from './Component/Dashboard';
+import Button from './Component/Button';
+import Cards from './Component/Cards';
+
+
+
+
 
 function App() {
+
   return (
+  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h3>Select the Components</h3>
+      <Routes>
+      <Route exact path="/" element={<Dashboard/>}/>
+      </Routes>
+       <Routes>
+      <Route  path="/buttons" element={<Button/>}/>
+      </Routes>
+      <Routes>
+      <Route  path="/cards" element={<Cards/>}/>
+      </Routes>
+      
+      
     </div>
+   
+
+
   );
 }
 
